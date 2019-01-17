@@ -39,6 +39,9 @@ public class UserController {
 
     }
 
+    /**
+     * 用户注册
+     */
     @Autowired
     private IUserService userService;
     @RequestMapping(value = "/register")
@@ -49,6 +52,18 @@ public class UserController {
         return "success";
 
     }
+
+    /**
+     * 查询用户
+     * @param username 通过用户名
+     * @return vo
+     */
+    @RequestMapping(value = "/find")
+    @ResponseBody
+    public User find (String username){
+        return userService.findByUsername(username);
+    }
+
 
     public static void main(String[] args) {
         //启动springBoot的项目

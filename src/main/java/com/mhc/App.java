@@ -1,5 +1,6 @@
 package com.mhc;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
@@ -11,6 +12,7 @@ import org.springframework.context.annotation.ComponentScan;
  */
 
 @EnableAutoConfiguration
+@MapperScan(basePackages = "com.mhc.mapper") //扫描 mybatis mapper
 @ComponentScan(basePackages = "com.mhc") //配置通用扫描包
 public class App 
 {
